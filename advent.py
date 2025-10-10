@@ -25,10 +25,11 @@ class Advent:
 
         try:
             cls = self.years[year][day]
-            day_obj: Day = cls(file_path=file_path)
-            day_obj.solve()
-
-            result = day_obj.get_result_string()
-            return result
         except KeyError:
             print(f"Year {year} Day {day} not found.")
+            
+        day_obj: Day = cls(file_path=file_path)
+        day_obj.solve()
+
+        result = day_obj.get_result_string()
+        return result
